@@ -66,11 +66,11 @@ do
    git commit -m"$commitMessage [?? file: $singleUntracked] $singleUntracked"
 done
 
-printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}";
+printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}\n";
 
 if [ shouldPush ]
 then 
-   printf "${GREEN}push done${NC}"
+   printf "${GREEN}push done${NC}\n"
 fi
 
 exit 1
