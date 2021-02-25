@@ -70,7 +70,7 @@ printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped
 
 if [ shouldPush = 1]
 then 
-   printf "${GREEN}push done${NC}";
+   printf "${GREEN}push done${NC}"
 fi
 
 exit 1
