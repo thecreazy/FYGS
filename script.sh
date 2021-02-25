@@ -13,7 +13,7 @@ shouldPush=0
 
 helpFunction()
 {
-   printf "\n${NC}Usage: $0 -m\"My nice feature\""
+   printf "\n${NC}Usage: $0 -m\"My nice feature\" [-p]"
    printf "\n${NC}\t -m'My nice feature' -> ${GREEN}base commit message${NC}"
    printf "\n${NC}\t -v -> ${GREEN}return the version${NC}"
    printf "\n${NC}\t -p -> ${GREEN}push after the commit${NC}"
