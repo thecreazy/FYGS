@@ -27,15 +27,15 @@ then
 fi
 
 editedOutput=$(git status -s | grep "M ")
-splittedEdited=$(echo $editedOutput | tr "M " "\n")
+splittedEdited=$(echo $editedOutput | sed 's/M /\n/g')
 for singleEdited in $splittedEdited
 do
-    git add $singleEdited
-    git commit -m"$commitMessage [M file: $singleEdited] $singleEdited"
+   git add $singleEdited
+   git commit -m"$commitMessage [M file: $singleEdited] $singleEdited"
 done
 
 deletedOutput=$(git status -s | grep "D ")
-splittedDeleted=$(echo $deletedOutput | tr "D " "\n")
+splittedDeleted=$(echo $deletedOutput | sed 's/D /\n/g')
 for singleDeleted in $splittedDeleted
 do
     git add $singleDeleted
@@ -43,7 +43,7 @@ do
 done
 
 untrackedOutput=$(git status -s | grep "?? ")
-splittedUntracked=$(echo $untrackedOutput | tr "?? " "\n")
+splittedUntracked=$(echo $untrackedOutput | sed 's/?? /\n/g')
 for singleUntracked in $splittedUntracked
 do
     git add $singleUntracked
@@ -51,7 +51,3 @@ do
 done
 
 printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}";
-
-
-
-
