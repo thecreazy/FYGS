@@ -26,7 +26,7 @@ then
    helpFunction
 fi
 
-editedOutput=$(git status -s | grep M)
+editedOutput=$(git status -s | grep "M ")
 splittedEdited=$(echo $editedOutput | tr "M " "\n")
 for singleEdited in $splittedEdited
 do
@@ -34,7 +34,7 @@ do
     git commit -m"$commitMessage [M file: $singleEdited] $singleEdited"
 done
 
-deletedOutput=$(git status -s | grep D)
+deletedOutput=$(git status -s | grep "D ")
 splittedDeleted=$(echo $deletedOutput | tr "D " "\n")
 for singleDeleted in $splittedDeleted
 do
@@ -42,7 +42,7 @@ do
     git commit -m"$commitMessage [D file: $singleDeleted] $singleDeleted"
 done
 
-untrackedOutput=$(git status -s | grep ??)
+untrackedOutput=$(git status -s | grep "?? ")
 splittedUntracked=$(echo $untrackedOutput | tr "?? " "\n")
 for singleUntracked in $splittedUntracked
 do
