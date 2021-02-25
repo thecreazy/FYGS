@@ -1,28 +1,56 @@
 #!/bin/bash
 
+#COSTANTS
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;36m'
+NC='\033[0m'
 
-edited_output=$(git status -s | grep M)
-splitted_edited=$(echo $edited_output | tr "M " "\n")
-for single_edited in $splitted_edited
+helpFunction()
+{
+   printf "\n${NC}Usage: $0 -m\"My nice feature\""
+   printf "\n${NC}\t -m'My nice feature'"
+   exit 1 # Exit script after printing help
+}
+
+while getopts "m:" opt
 do
-    git add $single_edited
-    git commit -a -m"edited [M file: $single_edited]"
+   case "$opt" in
+      m ) commitMessage="$OPTARG" ;;
+      ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
+   esac
 done
 
-deleted_output=$(git status -s | grep D)
-splitted_deleted=$(echo $deleted_output | tr "D " "\n")
-for single_deleted in $splitted_deleted
+if [ -z "$commitMessage" ]
+then
+   printf "${RED}No commit message provided${NC}";
+   helpFunction
+fi
+
+echo $commitMessage
+
+editedOutput=$(git status -s | grep M)
+splittedEdited=$(echo $editedOutput | tr "M " "\n")
+for singleEdited in $splittedEdited
 do
-    git add $single_deleted
-    git commit -a -m"deleted [D file: $single_deleted]"
+    git add $singleEdited
+    git commit -a -m"edited [M file: $singleEdited]"
 done
 
-untracked_output=$(git status -s | grep ??)
-splitted_untracked=$(echo $untracked_output | tr "?? " "\n")
-for single_untracked in $splitted_untracked
+deletedOutput=$(git status -s | grep D)
+splittedDeleted=$(echo $deletedOutput | tr "D " "\n")
+for singleDeleted in $splittedDeleted
 do
-    git add $single_untracked
-    git commit -a -m"added [?? file: $single_untracked]"
+    git add $singleDeleted
+    git commit -a -m"deleted [D file: $singleDeleted]"
+done
+
+untrackedOutput=$(git status -s | grep ??)
+splittedUntracked=$(echo $untrackedOutput | tr "?? " "\n")
+for singleUntracked in $splittedUntracked
+do
+    git add $singleUntracked
+    git commit -a -m"added [?? file: $singleUntracked]"
 done
 
 
