@@ -1,29 +1,37 @@
 #!/bin/bash
 
+#APP COSTANTS
+APPVERSION=1.0
+
 #COLOR COSTANTS
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+#app variables
+shouldPush=0
+
 helpFunction()
 {
    printf "\n${NC}Usage: $0 -m\"My nice feature\""
-   printf "\n${NC}\t -m'My nice feature' "
-   printf "\n${NC}\t -v "
+   printf "\n${NC}\t -m'My nice feature' -> ${GREEN}base commit message${NC}"
+   printf "\n${NC}\t -v -> ${GREEN}return the version${NC}"
+   printf "\n${NC}\t -p -> ${GREEN}push after the commit${NC}"
    exit 1 # Exit script after printing help
 }
 
 versionFunction()
 {
-   printf "${GREEN}FYGS v1.0${NC} "
+   printf "${GREEN}FYGS v$APPVERSION${NC} "
    exit 1
 }
 
-while getopts "m:v" opt
+while getopts "m:vp" opt
 do
    case "$opt" in
-      m ) commitMessage="$OPTARG" ;;
       v ) versionFunction ;;
+      m ) commitMessage="$OPTARG" ;;
+      p ) shouldPush=1 ;;
       ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
 done
@@ -59,4 +67,10 @@ do
 done
 
 printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}";
+
+if [ shouldPush = 1]
+then 
+   printf "${GREEN}push done${NC}";
+fi
+
 exit 1
