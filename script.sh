@@ -8,14 +8,22 @@ NC='\033[0m'
 helpFunction()
 {
    printf "\n${NC}Usage: $0 -m\"My nice feature\""
-   printf "\n${NC}\t -m'My nice feature'"
+   printf "\n${NC}\t -m'My nice feature' "
+   printf "\n${NC}\t -v "
    exit 1 # Exit script after printing help
 }
 
-while getopts "m:" opt
+versionFunction()
+{
+   printf "${GREEN}FYGS v1.0${NC} "
+   exit 1
+}
+
+while getopts "m:v" opt
 do
    case "$opt" in
       m ) commitMessage="$OPTARG" ;;
+      v ) versionFunction ;;
       ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
 done
@@ -51,3 +59,4 @@ do
 done
 
 printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}";
+exit 1
