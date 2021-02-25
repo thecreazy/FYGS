@@ -70,8 +70,12 @@ printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped
 
 if [ "$shouldPush" -eq "1" ];
 then
-   git push --force;
-   printf "${GREEN}push done${NC}\n"
+   if git push --force ; then
+      printf "${GREEN}push done${NC}\n"
+   else
+      printf "${RED}push failed${NC}\n"
+   fi
+   
 fi
 
 exit 1
