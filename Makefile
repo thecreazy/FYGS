@@ -9,6 +9,6 @@
 all: install
 
 install:
-	cp ./script.sh /usr/local/bin/fygs.sh
-	chmod +x /usr/local/bin/fygs.sh
+	cp ./script.sh /usr/local/bin/fygs
+	chmod +x /usr/local/bin/fygs
 	echo Install completed
