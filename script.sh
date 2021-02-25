@@ -34,7 +34,7 @@ splittedEdited=$(echo $editedOutput | tr "M " "\n")
 for singleEdited in $splittedEdited
 do
     git add $singleEdited
-    git commit -a -m"edited [M file: $singleEdited]"
+    git commit -a -m"$commitMessage [M file: $singleEdited]"
 done
 
 deletedOutput=$(git status -s | grep D)
@@ -42,7 +42,7 @@ splittedDeleted=$(echo $deletedOutput | tr "D " "\n")
 for singleDeleted in $splittedDeleted
 do
     git add $singleDeleted
-    git commit -a -m"deleted [D file: $singleDeleted]"
+    git commit -a -m"$commitMessage [D file: $singleDeleted]"
 done
 
 untrackedOutput=$(git status -s | grep ??)
@@ -50,7 +50,7 @@ splittedUntracked=$(echo $untrackedOutput | tr "?? " "\n")
 for singleUntracked in $splittedUntracked
 do
     git add $singleUntracked
-    git commit -a -m"added [?? file: $singleUntracked]"
+    git commit -a -m"$commitMessage [?? file: $singleUntracked]"
 done
 
 
