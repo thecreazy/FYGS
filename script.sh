@@ -50,7 +50,7 @@ do
     git commit -m"$commitMessage [?? file: $singleUntracked] $singleUntracked"
 done
 
-printf "${GREEN}commit: $commitMessage done :) enjoy your pumped stats${NC}";
+printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}";
 
 
 
