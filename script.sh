@@ -46,16 +46,16 @@ deletedOutput=$(git status -s | grep "D ")
 splittedDeleted=$(echo $deletedOutput | sed 's/D /\n/g')
 for singleDeleted in $splittedDeleted
 do
-    git add $singleDeleted
-    git commit -m"$commitMessage [D file: $singleDeleted] $singleDeleted"
+   git add $singleDeleted
+   git commit -m"$commitMessage [D file: $singleDeleted] $singleDeleted"
 done
 
 untrackedOutput=$(git status -s | grep "?? ")
 splittedUntracked=$(echo $untrackedOutput | sed 's/?? /\n/g')
 for singleUntracked in $splittedUntracked
 do
-    git add $singleUntracked
-    git commit -m"$commitMessage [?? file: $singleUntracked] $singleUntracked"
+   git add $singleUntracked
+   git commit -m"$commitMessage [?? file: $singleUntracked] $singleUntracked"
 done
 
 printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}";
