@@ -68,7 +68,7 @@ done
 
 printf "${GREEN}commit: ${RED}[$commitMessage]${GREEN} done :) enjoy your pumped stats${NC}";
 
-if [ shouldPush = 1]
+if [ shouldPush ]
 then 
    printf "${GREEN}push done${NC}"
 fi
