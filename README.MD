@@ -83,7 +83,21 @@ Usage: fygs -m"feat(core): My nice feature" [-p] [-f]
   </tbody>
 </table>
 
-### Example
+> Examples
+
+1. Normal Commit example 
+
+<div align="left">
+  <a href="https://github.com/thecreazy/fygs">
+    <img src="https://github.com/thecreazy/FYGS/blob/main/docs/example_normal.png" alt="Example normal" width="500"/>
+  </a>
+  <br>
+  <br>
+</div>
+
+2. Commit and push example 
+
+#### Normal Commit example 
 
 ## 🤝 Contributing
 
