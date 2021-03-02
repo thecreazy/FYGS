@@ -97,7 +97,15 @@ Usage: fygs -m"feat(core): My nice feature" [-p] [-f]
 
 2. Commit and push example 
 
-#### Normal Commit example 
+<div align="left">
+  <a href="https://github.com/thecreazy/fygs">
+    <img src="https://github.com/thecreazy/FYGS/blob/main/docs/example_push.png" alt="Example with push" width="500"/>
+  </a>
+  <br>
+  <br>
+</div>
+
+3. Normal Commit example 
 
 ## 🤝 Contributing
 
