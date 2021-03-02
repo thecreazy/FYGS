@@ -107,6 +107,14 @@ Usage: fygs -m"feat(core): My nice feature" [-p] [-f]
 
 3. Normal Commit example 
 
+<div align="left">
+  <a href="https://github.com/thecreazy/fygs">
+    <img src="https://github.com/thecreazy/FYGS/blob/main/docs/example_fake.png" alt="Example fake" width="500"/>
+  </a>
+  <br>
+  <br>
+</div>
+
 ## 🤝 Contributing
 
 1. Fork this repository
