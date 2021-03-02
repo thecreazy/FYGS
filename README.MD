@@ -37,7 +37,53 @@ This repo needs `unix date` so please install `gdate` if you use MacOS, the code
 
 ## 🪄 Using
 
+```bash
+Usage: fygs -m"feat(core): My nice feature" [-p] [-f]
+         -m'My nice feature' -> base commit message
+         -v -> return the version
+         -p -> push after the commit
+         -f -> create last year fake empty commits in your repo
+```
 
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>What do</th>
+      <th>Default</th>
+      <th>Mandatory</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-v</td>
+      <td>Return the version of FYGS</td>
+      <td>-</td>
+      <td>false</td>
+    </tr>
+     <tr>
+      <td>-m""</td>
+      <td>Set the commit message</td>
+      <td>""</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>-p</td>
+      <td>Force push on the default branch</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>-f</td>
+      <td>Create fake empty commit in the past 365 days</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+
+  </tbody>
+</table>
+
+### Example
 
 ## 🤝 Contributing
 
