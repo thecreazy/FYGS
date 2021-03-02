@@ -100,6 +100,8 @@ do
    esac
 done
 
+checkCommitMessageFunction
+
 editedOutput=$(git status -s | grep "M ")
 splittedEdited=$(echo $editedOutput | sed 's/M /\n/g')
 for singleEdited in $splittedEdited
